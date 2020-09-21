@@ -15,3 +15,7 @@ Just run the following command inside the root directory.
 
 All set, you are good to go.
 You can view the website with the given link with the **browser**.
+
+
+# Preview
+![alt text](https://github.com/iamrasheeq/hackNSU_Hunter/blob/master/hunter.png)
