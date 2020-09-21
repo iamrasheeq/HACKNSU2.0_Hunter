@@ -36,9 +36,10 @@ def vendors(request):
     return render(request,'accounts/vendors.html',context)
 
 def products(request):
+    tags = Tag.objects.all()
     products = Product.objects.all()
 
-    return render(request,'accounts/products.html',{'products':products})
+    return render(request,'accounts/products.html',{'products':products,'tags':tags})
 
 def vprofile(request,pkey):
     vprofile = Vendor.objects.get(id=pkey)
@@ -110,6 +111,11 @@ def vorderupdate(request,pkey):
         if form.is_valid():
             form.save()
             return redirect('/')
+
+    context = {'form':form}
+    return render(request,'accounts/vorder.html',context)
+
+
 def corderupdate(request,pkey):
 
     order = Client_Order.objects.get(id=pkey)

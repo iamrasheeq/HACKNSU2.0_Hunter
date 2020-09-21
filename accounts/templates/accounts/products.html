@@ -10,10 +10,10 @@
         </div>
         <div class="card card-body">
             <table class="table">
+              <a href="{% url 'vorder'%}" class="btn btn-primary btn-sm btn-block">Add Products</a>
                 <tr>
                     <th>Products</th>
                     <th>Category</th>
-                    <th>Quantity</th>
                     <th>Buy Price</th>
                     <th>Sell Price</th>
                 </tr>
@@ -22,9 +22,26 @@
                 <tr>
                   <td>{{i.name}}</td>
                   <td>{{i.tags}}</td>
-                  <td>{{i.quantity}}</td>
                   <td>{{i.buy_Price}}</td>
                   <td>{{i.sell_Price}}</td>
+                </tr>
+                {% endfor %}
+
+            </table>
+        </div>
+        <br>
+        <div class="card card-body">
+            <h5>Product Tags</h5>
+        </div>
+        <div class="card card-body">
+            <table class="table">
+              <a href="{% url 'vorder'%}" class="btn btn-primary btn-sm btn-block">Add Tags</a>
+                
+
+                {% for i in tags %}
+                <tr>
+                  <th><ul><li>{{i.name}}</li></ul></th>
+
                 </tr>
                 {% endfor %}
 
