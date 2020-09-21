@@ -1,5 +1,5 @@
 {% extends 'accounts/main.html' %}
-
+{% load static %}
 {% block content %}
 
 <br>
@@ -21,7 +21,7 @@
                 {% for i in products %}
                 <tr>
                   <td>{{i.name}}</td>
-                  <td>{{i.category}}</td>
+                  <td>{{i.tags}}</td>
                   <td>{{i.quantity}}</td>
                   <td>{{i.buy_Price}}</td>
                   <td>{{i.sell_Price}}</td>

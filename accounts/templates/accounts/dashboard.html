@@ -6,12 +6,12 @@
 
 <div class="row">
 
-    <div class="col-md">
+    <div class="col-md text-center">
         <h5>Vendor Orders</h5>
         <hr>
         <div class="card card-body">
-            <a href="" class="btn btn-primary btn-sm btn-block">Purchase Product</a>
-            <table class="table table-sm text-center">
+            <a href="{% url 'vorder'%}" class="btn btn-primary btn-sm btn-block">Purchase Product</a>
+            <table class="table table-sm ">
                 <tr>
                     <th>Product</th>
                     <th>Quantity</th>
@@ -26,12 +26,12 @@
                 <tr>
                   <td>{{i.product}}</td>
                   <td>{{i.quantity}}</td>
-                  <td></td>
+                  <td>{{i.quantity}} x {{i.product.buy_Price}}</td>
                   <td>{{i.vendor}}</td>
                   <td>{{i.date_created}}</td>
                   <td>{{i.status}}</td>
-                  <td>update</td>
-                  <td>remove</td>
+                  <td><a class="btn btn-sm btn-warning" href="{% url 'vorderupdate' i.id %}" style="color:brown">update</a></td>
+                  <td ><a class="btn btn-sm btn-danger" href="{% url 'deleteOrder' i.id %}" style="color:white">remove</a></td>
                 </tr>
                 {% endfor %}
 
@@ -41,13 +41,14 @@
     </div>
   </div>
 <br>
+<br>
   <div class="row">
-    <div class="col-md">
+    <div class="col-md text-center">
         <h5>Clients Orders</h5>
         <hr>
         <div class="card card-body">
-            <a href="" class="btn btn-primary btn-sm btn-block">Create Order</a>
-            <table class="table table-sm text-center">
+            <a href="{% url 'corder'%}" class="btn btn-primary btn-sm btn-block">Sell Product</a>
+            <table class="table table-sm ">
                 <tr>
                     <th>Product</th>
                     <th>Quantity</th>
@@ -63,12 +64,12 @@
                 <tr>
                   <td>{{i.product}}</td>
                   <td>{{i.quantity}}</td>
-                  <td></td>
+                  <td>{{i.quantity}} x {{i.product.sell_Price}}</td>
                   <td>{{i.client}}</td>
                   <td>{{i.date_created}}</td>
                   <td>{{i.status}}</td>
-                  <td>update</td>
-                  <td>remove</td>
+                    <td><a class="btn btn-sm btn-warning" href="{% url 'corderupdate' i.id %}" style="color:brown">update</a></td>
+                  <td ><a class="btn btn-sm btn-danger" href="{% url 'deleteOrderC' i.id %}" style="color:white">remove</a></td>
                 </tr>
                 {% endfor %}
 
@@ -78,76 +79,7 @@
     </div>
 </div>
 
-<br>
 
-<div class="row">
-    <div class="col-md-6 text-center">
-        <h5>Clients</h5>
-        <hr>
-        <div class="card card-body">
-            <a href="" class="btn btn-primary btn-sm btn-block">Create client</a>
-            <table class="table table-sm text-center">
-                <tr>
-
-                    <th>Clients</th>
-                    <th>email</th>
-                </tr>
-
-                {% for i in clients %}
-                <tr>
-                  <td>{{i.name}}</td>
-                  <td>{{i.email}}</td>
-                  <td>{{i.phone}}</td>
-                </tr>
-                {% endfor %}
-
-            </table>
-
-        </div>
-    </div>
-    <div class="col-md-6 text-center">
-        <h5>Vendors</h5>
-        <hr>
-        <div class="card card-body">
-            <a href="" class="btn btn-primary btn-sm btn-block">Create Vendor</a>
-            <table class="table table-sm ">
-                <tr>
-
-                    <th>Vendors</th>
-                    <th>email</th>
-                </tr>
-                {% for i in vendors %}
-                <tr>
-                  <td>{{i.name}}</td>
-                  <td>{{i.email}}</td>
-                  <td>{{i.phone}}</td>
-                </tr>
-                {% endfor %}
-
-            </table>
-
-        </div>
-    </div>
-    <!-- <div class="col-md-5">
-        <h5>Recent Orders</h5>
-        <hr>
-        <div class="card card-body">
-            <a href="" class="btn btn-primary btn-sm btn-block">Create Order</a>
-            <table class="table table-sm text-center">
-                <tr>
-                    <th>Product</th>
-                    <th>Date Order</th>
-                    <th>Status</th>
-                    <th>Update</th>
-                    <th>Remove</th>
-                </tr>
-
-
-            </table>
-
-        </div>
-    </div> -->
-</div>
 
 <br>
 

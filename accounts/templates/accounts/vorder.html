@@ -1,0 +1,23 @@
+{%  extends 'accounts/main.html' %}
+{% load static %}
+{% block content %}
+
+
+<div class="row">
+	<div class="col-md" align="center">
+		<div class="card card-body">
+
+			<form action="" method="POST">
+				{% csrf_token %}
+				{{form}}
+				<br>
+				<input class="btn btn-warning" type="submit" name="Submit">
+				<a class="btn btn-primary" href="{% url 'dashboard' %}">Back</a>
+			</form>
+
+		</div>
+	</div>
+</div>
+
+
+{% endblock %}
