@@ -76,6 +76,33 @@ def corder(request):
     context = {'form':form}
     return render(request,'accounts/corder.html',context)
 
+def addProduct(request):
+
+    form = productCreate()
+    if request.method == "POST":
+        form = productCreate(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect('/products/')
+
+
+    context = {'form':form}
+    return render(request,'accounts/pcreate.html',context)
+
+def addTag(request):
+
+    form = tagCreate()
+    if request.method == "POST":
+        form = tagCreate(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect('/products/')
+
+
+    context = {'form':form}
+    return render(request,'accounts/pcreate.html',context)
+
+
 def createVendor(request):
 
     form = VendorCreate()
@@ -88,6 +115,7 @@ def createVendor(request):
 
     context = {'form':form}
     return render(request,'accounts/vcreate.html',context)
+
 def createClient(request):
 
     form = ClientCreate()

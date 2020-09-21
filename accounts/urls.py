@@ -15,4 +15,6 @@ urlpatterns = [
     path('deleteOrderC/<str:pkey>/', views.deleteOrderC,name='deleteOrderC'),
     path('createVendor/', views.createVendor,name='createVendor'),
     path('createClient/', views.createClient,name='createClient'),
+    path('addProduct/', views.addProduct,name='addProduct'),
+    path('addTag/', views.addTag,name='addTag'),
 ]

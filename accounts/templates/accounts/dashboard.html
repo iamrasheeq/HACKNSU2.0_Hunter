@@ -3,7 +3,44 @@
 {% include 'accounts/status.html' %}
 
 <br>
+<div class="row">
+  <div class="col-md text-center">
+      <h5>Clients Orders</h5>
+      <hr>
+      <div class="card card-body">
+          <a href="{% url 'corder'%}" class="btn btn-primary btn-sm btn-block">Sell Product</a>
+          <table class="table table-sm ">
+              <tr>
+                  <th>Product</th>
+                  <th>Quantity</th>
+                  <th>Price</th>
+                  <th>Client</th>
+                  <th>Date Order</th>
+                  <th>Status</th>
+                  <th>Update</th>
+                  <th>Remove</th>
+              </tr>
 
+              {% for i in client_orders %}
+              <tr>
+                <td>{{i.product}}</td>
+                <td>{{i.quantity}}</td>
+                <td>{{i.quantity}} x {{i.product.sell_Price}}</td>
+                <td>{{i.client}}</td>
+                <td>{{i.date_created}}</td>
+                <td>{{i.status}}</td>
+                  <td><a class="btn btn-sm btn-warning" href="{% url 'corderupdate' i.id %}" style="color:brown">update</a></td>
+                <td ><a class="btn btn-sm btn-danger" href="{% url 'deleteOrderC' i.id %}" style="color:white">remove</a></td>
+              </tr>
+              {% endfor %}
+
+          </table>
+
+      </div>
+  </div>
+</div>
+<br>
+<br>
 <div class="row">
 
     <div class="col-md text-center">
@@ -41,47 +78,7 @@
     </div>
   </div>
 <br>
-<br>
-  <div class="row">
-    <div class="col-md text-center">
-        <h5>Clients Orders</h5>
-        <hr>
-        <div class="card card-body">
-            <a href="{% url 'corder'%}" class="btn btn-primary btn-sm btn-block">Sell Product</a>
-            <table class="table table-sm ">
-                <tr>
-                    <th>Product</th>
-                    <th>Quantity</th>
-                    <th>Price</th>
-                    <th>Client</th>
-                    <th>Date Order</th>
-                    <th>Status</th>
-                    <th>Update</th>
-                    <th>Remove</th>
-                </tr>
 
-                {% for i in client_orders %}
-                <tr>
-                  <td>{{i.product}}</td>
-                  <td>{{i.quantity}}</td>
-                  <td>{{i.quantity}} x {{i.product.sell_Price}}</td>
-                  <td>{{i.client}}</td>
-                  <td>{{i.date_created}}</td>
-                  <td>{{i.status}}</td>
-                    <td><a class="btn btn-sm btn-warning" href="{% url 'corderupdate' i.id %}" style="color:brown">update</a></td>
-                  <td ><a class="btn btn-sm btn-danger" href="{% url 'deleteOrderC' i.id %}" style="color:white">remove</a></td>
-                </tr>
-                {% endfor %}
-
-            </table>
-
-        </div>
-    </div>
-</div>
-
-
-
-<br>
 
 
 
