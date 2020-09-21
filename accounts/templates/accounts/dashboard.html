@@ -8,7 +8,7 @@
       <h5>Clients Orders</h5>
       <hr>
       <div class="card card-body">
-          <a href="{% url 'corder'%}" class="btn btn-primary btn-sm btn-block">Sell Product</a>
+          <a href="{% url 'corder'%}" class="btn btn-info btn-sm btn-block">Sell Product</a>
           <table class="table table-sm ">
               <tr>
                   <th>Product</th>
@@ -29,7 +29,7 @@
                 <td>{{i.client}}</td>
                 <td>{{i.date_created}}</td>
                 <td>{{i.status}}</td>
-                  <td><a class="btn btn-sm btn-warning" href="{% url 'corderupdate' i.id %}" style="color:brown">update</a></td>
+                  <td><a class="btn btn-sm btn-warning" href="{% url 'corderupdate' i.id %}">update</a></td>
                 <td ><a class="btn btn-sm btn-danger" href="{% url 'deleteOrderC' i.id %}" style="color:white">remove</a></td>
               </tr>
               {% endfor %}
@@ -47,7 +47,7 @@
         <h5>Vendor Orders</h5>
         <hr>
         <div class="card card-body">
-            <a href="{% url 'vorder'%}" class="btn btn-primary btn-sm btn-block">Purchase Product</a>
+            <a href="{% url 'vorder'%}" class="btn btn-info btn-sm btn-block">Purchase Product</a>
             <table class="table table-sm ">
                 <tr>
                     <th>Product</th>
@@ -67,7 +67,7 @@
                   <td>{{i.vendor}}</td>
                   <td>{{i.date_created}}</td>
                   <td>{{i.status}}</td>
-                  <td><a class="btn btn-sm btn-warning" href="{% url 'vorderupdate' i.id %}" style="color:brown">update</a></td>
+                  <td><a class="btn btn-sm btn-warning" href="{% url 'vorderupdate' i.id %}" >update</a></td>
                   <td ><a class="btn btn-sm btn-danger" href="{% url 'deleteOrder' i.id %}" style="color:white">remove</a></td>
                 </tr>
                 {% endfor %}
