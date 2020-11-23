@@ -1,4 +1,5 @@
 # Team Hunter
+
 Simple inventory management website for any kind of company.
 
 ## Before You Dig
