@@ -1,5 +1,5 @@
 
-# hackNSU 
+# hackNSU 2.0
 ## Team Hunter
 Simple inventory management website for any kind of company.
 
